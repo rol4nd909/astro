@@ -1,0 +1,42 @@
+:where(h1, h2, h3, h4, h5) {
+    line-height: normal;
+}
+
+h1 {
+    font-size: var(--fs-fluid-h1);
+    font-style: italic;
+    font-weight: var(--fw-800);
+}
+
+h2 {
+    font-size: var(--fs-fluid-h2);
+    font-weight: var(--fw-300);
+}
+
+h3 {
+    font-size: var(--fs-fluid-h3);
+    font-weight: var(--fw-600);
+}
+
+h4 {
+    font-size: var(--fs-fluid-h4);
+    font-weight: var(--fw-600);
+}
+
+h5 {
+    font-size: var(--fs-fluid-h5);
+    font-weight: var(--fw-500);
+}
+
+p {
+    font-weight: var(--fw-500);
+}
+
+:where(strong, b) {
+    font-weight: var(--fw-800);
+}
+
+:where(em, i) {
+    font-style: italic;
+    font-weight: var(--fw-800);
+}

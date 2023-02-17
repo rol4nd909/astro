@@ -2,6 +2,9 @@
 	"name": "astro-playground",
 	"type": "module",
 	"version": "0.0.1",
+	"browserslist": [
+		"defaults"
+	],
 	"scripts": {
 		"dev": "astro dev",
 		"start": "astro dev",
@@ -11,5 +14,20 @@
 	},
 	"dependencies": {
 		"astro": "^2.0.10"
+	},
+	"devDependencies": {
+		"autoprefixer": "^10.4.13",
+		"open-props": "^1.5.5",
+		"postcss": "^8.4.21",
+		"postcss-jit-props": "^1.0.9",
+		"postcss-preset-env": "^8.0.1",
+		"prettier": "^2.8.4",
+		"prettier-plugin-astro": "^0.8.0",
+		"sass": "^1.58.0",
+		"stylelint": "^15.1.0",
+		"stylelint-config-idiomatic-css": "^1.1.0",
+		"stylelint-config-prettier": "^9.0.5",
+		"stylelint-config-recommended-scss": "^9.0.1",
+		"stylelint-config-standard": "^30.0.1"
 	}
 }
