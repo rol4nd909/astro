@@ -1,6 +1,10 @@
 html {
     box-sizing: border-box;
-    color-scheme: dark light;
+    color-scheme: light;
+
+    &[color-scheme='dark'] {
+        color-scheme: dark;
+    }
 
     /* stylelint-disable-next-line property-no-vendor-prefix */
     -webkit-text-size-adjust: 100%;

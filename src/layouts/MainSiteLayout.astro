@@ -1,6 +1,8 @@
 ---
 import '../scss/global.scss'
 
+import DarkLightToggle from '../components/DarkLightToggle/DarkLightToggle.astro'
+
 export interface Props {
     title?: string
 }
@@ -19,7 +21,11 @@ const { title = 'Home Page' } = Astro.props as Props
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     </head>
     <body>
-        <header>Header</header>
+        <header>
+            Header
+
+            <DarkLightToggle />
+        </header>
 
         <main>
             <slot />

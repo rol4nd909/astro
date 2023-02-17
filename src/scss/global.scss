@@ -4,7 +4,7 @@
 // Using sass together with css cascade layers as read in
 // https://www.smashingmagazine.com/2022/01/introduction-css-cascade-layers/
 
-$layers: 'props', 'base' !default;
+$layers: 'props', 'base', 'components' !default;
 
 // Outputs the list of layers
 @layer #{$layers};
