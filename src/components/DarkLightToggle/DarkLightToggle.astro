@@ -36,7 +36,7 @@
 
     const getColorPreference = () => {
         if (localStorage.getItem(storageKey)) {
-            return localStorage.getItem(storageKey)
+            return localStorage.getItem(storageKey) || ''
         } else {
             return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
         }
@@ -44,14 +44,14 @@
 
     const setPreference = () => {
         localStorage.setItem(storageKey, theme.value)
+
         reflectPreference()
     }
 
     const reflectPreference = () => {
         const pressed = theme.value === 'dark' ? 'true' : 'false'
 
-        document.firstElementChild.setAttribute('color-scheme', theme.value)
-
+        document.firstElementChild?.setAttribute('color-scheme', theme.value)
         document.querySelector('.js-theme-toggle')?.setAttribute('aria-pressed', pressed)
     }
 
@@ -67,7 +67,7 @@
         reflectPreference()
 
         // now this script can find and listen for clicks on the control
-        document.querySelector('.js-theme-toggle').addEventListener('click', onClick)
+        document.querySelector('.js-theme-toggle')?.addEventListener('click', onClick)
     }
 
     // sync with system changes
