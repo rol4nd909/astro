@@ -47,11 +47,12 @@
 
     @media (--motionOK) {
         > .sun {
-            transition: transform 0.5s var(--ease-elastic-3);
+            transition: transform 0.5s var(--ease-elastic-3), fill 0.25s var(--ease-3);
         }
 
         > .sun-beams {
-            transition: transform 0.5s var(--ease-elastic-4), opacity 0.5s var(--ease-3);
+            transition: transform 0.5s var(--ease-elastic-4), opacity 0.5s var(--ease-3),
+                stroke 0.25s var(--ease-3);
         }
 
         .moon > circle {
