@@ -27,17 +27,17 @@ module.exports = {
         'custom-media-queries': true
       }
     }),
-    postcssjitprops({
-      ...OpenProps,
-      custom_selector: ':where(html)',
-      layer: 'props.openprops'
-    }),
     postcssGlobalData({
       files: [
         'src/scss/props/_props.media.scss'
       ]
     }),
     postcssCustomMedia(),
+    postcssjitprops({
+      ...OpenProps,
+      custom_selector: ':where(html)',
+      layer: 'props.openprops'
+    }),
     require('autoprefixer'),
   ]
 };
