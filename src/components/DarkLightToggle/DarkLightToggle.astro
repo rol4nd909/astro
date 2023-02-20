@@ -1,17 +1,13 @@
----
----
-
-<button class="dark-light-toggle js-theme-toggle" title="Toggle dark mode" aria-pressed="false">
-    <svg class="sun-and-moon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
-        <mask class="moon" id="moon-mask">
+<button class="js-theme-toggle" title="Toggle dark mode" aria-pressed="false">
+    <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+        <mask id="moon-mask">
             <rect x="0" y="0" width="100%" height="100%" fill="white"></rect>
             <circle cx="0" cy="10" r="6" fill="black"></circle>
         </mask>
 
-        <circle class="sun" cx="12" cy="12" r="6" mask="url(#moon-mask)" fill="currentColor"
-        ></circle>
+        <circle cx="12" cy="12" r="6" mask="url(#moon-mask)" fill="currentColor"></circle>
 
-        <g class="sun-beams" stroke="currentColor">
+        <g stroke="currentColor">
             <line x1="12" y1="1" x2="12" y2="3"></line>
             <line x1="12" y1="21" x2="12" y2="23"></line>
             <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
@@ -80,12 +76,12 @@
 </script>
 
 <style lang="scss">
-    .dark-light-toggle {
-        --size: var(--fs-fluid-h1);
+    button {
+        --size: 3rem;
         --icon-fill: currentcolor;
         --icon-fill-hover: hsl(74deg 5% 20%);
 
-        padding: 0;
+        padding: 0.5rem;
         border: none;
         background: none;
         inline-size: var(--size);
@@ -97,14 +93,97 @@
         -webkit-tap-highlight-color: transparent;
         outline-offset: 0.25rem;
 
-        > svg {
-            inline-size: 100%;
-            block-size: 100%;
-            stroke-linecap: round;
+        :global([color-scheme='dark']) & {
+            --icon-fill-hover: hsl(74deg 5% 90%);
+        }
+    }
+
+    svg {
+        inline-size: 100%;
+        block-size: 100%;
+        stroke-linecap: round;
+
+        > :is(mask, circle, g) {
+            transform-origin: center center;
+        }
+
+        > :is(mask, circle) {
+            fill: var(--icon-fill);
+        }
+
+        > g {
+            stroke: var(--icon-fill);
+            stroke-width: 0.125rem;
+        }
+
+        @media (--is-mouse) {
+            > :is(mask, circle) {
+                *:is(:hover, :focus-visible) > & {
+                    fill: var(--icon-fill-hover);
+                }
+            }
+
+            > g {
+                *:is(:hover, :focus-visible) > & {
+                    stroke: var(--icon-fill-hover);
+                }
+            }
         }
 
         :global([color-scheme='dark']) & {
-            --icon-fill-hover: hsl(74deg 5% 90%);
+            > circle {
+                transform: scale(1.75);
+            }
+
+            > g {
+                opacity: 0;
+            }
+
+            > mask > circle {
+                transform: translateX(7px);
+
+                @supports (cx: 1) {
+                    transform: translateX(0);
+                    cx: 7;
+                }
+            }
+        }
+
+        @media (--motion-ok) {
+            > circle {
+                transition: transform 0.5s var(--ease-elastic-3), fill 0.25s var(--ease-3);
+            }
+
+            > g {
+                transition: transform 0.5s var(--ease-elastic-4), opacity 0.5s var(--ease-3),
+                    stroke 0.25s var(--ease-3);
+            }
+
+            mask > circle {
+                transition: transform 0.25s var(--ease-out-5);
+
+                @supports (cx: 1) {
+                    transition: cx 0.25s var(--ease-out-5);
+                }
+            }
+
+            :global([color-scheme='dark']) & {
+                > circle {
+                    transform: scale(1.75);
+                    transition-timing-function: var(--ease-3);
+                    transition-duration: 0.25s;
+                }
+
+                > g {
+                    transform: rotateZ(-25deg);
+                    transition-duration: 0.15s;
+                }
+
+                > mask > circle {
+                    transition-delay: 0.25s;
+                    transition-duration: 0.5s;
+                }
+            }
         }
     }
 </style>

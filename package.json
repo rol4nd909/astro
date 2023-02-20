@@ -16,9 +16,11 @@
 		"astro": "^2.0.10"
 	},
 	"devDependencies": {
+		"@csstools/postcss-global-data": "^1.0.2",
 		"autoprefixer": "^10.4.13",
 		"open-props": "^1.5.5",
 		"postcss": "^8.4.21",
+		"postcss-custom-media": "^9.1.2",
 		"postcss-jit-props": "^1.0.9",
 		"postcss-preset-env": "^8.0.1",
 		"prettier": "^2.8.4",

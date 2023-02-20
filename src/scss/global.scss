@@ -1,10 +1,10 @@
-@use 'sass:meta';
-@use 'sass:list';
-
 // Using sass together with css cascade layers as read in
 // https://www.smashingmagazine.com/2022/01/introduction-css-cascade-layers/
 
-$layers: 'props', 'base', 'components' !default;
+@use 'sass:meta';
+@use 'sass:list';
+
+$layers: 'props', 'base' !default;
 
 // Outputs the list of layers
 @layer #{$layers};
@@ -17,11 +17,10 @@ $layers: 'props', 'base', 'components' !default;
 }
 
 @layer demo {
-    // h1 {
-    //     color: deeppink;
-    //     font-size: var(--fs-fluid-3);
-    //     font-synthesis: none;
-    // }
+    h1 {
+        color: hsl(var(--pink-7-hsl));
+    }
+
     main {
         inline-size: min(40rem, calc(100% - 2rem));
     }
