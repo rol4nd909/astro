@@ -91,11 +91,11 @@ export function Carousel({ children, indicators, buttons, title, ...attributes }
       {title && <h2 className={clsx(styles.title)}>{title}</h2>}
 
       {buttons && (
-        <div className={clsx(styles.controls, 'carousel--controls')}>
+        <div className={clsx(styles.controls)}>
           <button
             type="button"
             title="Previous Item"
-            className={clsx(styles.control, '--previous')}
+            className={clsx(styles.control)}
             aria-label="Previous Item"
             disabled={active === 0}
             onClick={() => ref.current && scrollToIndex(ref.current, active - 1)}
@@ -116,7 +116,7 @@ export function Carousel({ children, indicators, buttons, title, ...attributes }
           <button
             type="button"
             title="Next Item"
-            className={clsx(styles.control, '--next')}
+            className={clsx(styles.control)}
             aria-label="Next Item"
             disabled={active === children.length - 1}
             onClick={() => ref.current && scrollToIndex(ref.current, active + 1)}
@@ -147,7 +147,7 @@ export function Carousel({ children, indicators, buttons, title, ...attributes }
         {/* Start slides */}
         {children.map((slide, index) => (
           <div
-            className={clsx(styles.snap, active === index && styles.inView)}
+            className={clsx(styles.snap)}
             aria-label={`${index + 1} of ${children.length}`}
             aria-roledescription="item"
             key={index}

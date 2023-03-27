@@ -78,18 +78,18 @@
     scroll-snap-align: start;
     scroll-snap-stop: always;
 
-    // @media (--motion-ok) {
-    //     > * {
-    //         transition: transform 0.3s var(--ease-2);
-    //         will-change: transform;
-    //     }
+    @media (--motion-ok) {
+        > * {
+            transition: transform 0.3s var(--ease-2);
+            will-change: transform;
+        }
 
-    //     &:not(.inView) {
-    //         > * {
-    //             transform: scale(0.9);
-    //         }
-    //     }
-    // }
+        &:is([inert]) {
+            > * {
+                transform: scale(0.9);
+            }
+        }
+    }
 }
 
 .controls {
