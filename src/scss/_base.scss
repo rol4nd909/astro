@@ -45,3 +45,8 @@ main {
         grid-column: contain;
     }
 }
+
+header,
+footer {
+    grid-column: contain;
+}
