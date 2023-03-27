@@ -84,6 +84,7 @@
             will-change: transform;
         }
 
+        // Read this in reverse, the item with inert is not scaled ;)
         &:is([inert]) {
             > * {
                 transform: scale(0.9);
