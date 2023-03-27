@@ -21,10 +21,6 @@ $layers: 'props', 'base' !default;
         color: hsl(var(--pink-7-hsl));
     }
 
-    main {
-        inline-size: min(40rem, calc(100% - 2rem));
-    }
-
     pre {
         overflow-x: auto;
         padding: var(--size-3);

@@ -2,8 +2,24 @@
 @forward './base/reset';
 @forward './base/typography';
 
+:where(html) {
+    --size-contain: calc(88.125rem / 2);
+    --side-space: 0rem;
+
+    @media (--for-tablet-l-up) {
+        --side-space: 1.5rem;
+    }
+}
+
 body {
+    --_main: calc(50vw - (var(--size-contain) + var(--side-space)));
+
     display: grid;
+    grid-template-columns:
+        [fullbleed-start] calc(var(--side-space) * 2)
+        [main-start] minmax(1rem, var(--_main))
+        [contain-start] minmax(0, 1fr) [contain-end]
+        minmax(1rem, var(--_main)) [main-end];
     margin: 0;
     background-image: var(--gradient-3);
     font-family: Raleway, sans-serif;
@@ -17,5 +33,15 @@ body {
     @media (--for-phone-only) {
         background-color: hsl(var(--purple-5-hsl));
         background-image: none;
+    }
+}
+
+main {
+    display: grid;
+    grid-template-columns: inherit;
+    grid-column: fullbleed;
+
+    > * {
+        grid-column: contain;
     }
 }

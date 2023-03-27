@@ -1,0 +1,33 @@
+.root {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 2rem;
+
+    > * {
+        --flow-spacer: 1em;
+
+        inline-size: 100%;
+    }
+
+    .image {
+        aspect-ratio: 1;
+        height: auto;
+    }
+
+    @media (--for-tablet-p-up) {
+        .image {
+            inline-size: 33.3333%;
+        }
+
+        .content {
+            inline-size: 60%;
+        }
+    }
+
+    @media (--for-tablet-l-up) {
+        .content {
+            inline-size: 50%;
+        }
+    }
+}
