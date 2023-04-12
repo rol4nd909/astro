@@ -12,7 +12,7 @@
 
     .image {
         aspect-ratio: 1;
-        height: auto;
+        block-size: auto;
     }
 
     @media (--for-tablet-p-up) {

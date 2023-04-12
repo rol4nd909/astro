@@ -2,7 +2,7 @@
 
 .root {
     --flow-spacer: 6rem;
-    --_carousel-item-size: calc(50vw - var(--size-contain));
+    --_carousel-item-size: calc(50vi - var(--size-contain));
     --_carousel-gutters: max(1rem, calc(var(--_carousel-item-size) - var(--side-space)));
     --_carousel-scrollbar-gutter: 4rem;
     --ease-2: cubic-bezier(0.25, 0, 0.4, 1);
@@ -57,7 +57,7 @@
     grid-row: carousel-scroller;
     overflow-x: auto;
     gap: 1rem;
-    overscroll-behavior-x: contain;
+    overscroll-behavior-inline: contain;
     scroll-snap-type: x mandatory;
     scroll-padding-inline-start: var(--_carousel-gutters);
     scroll-padding-inline-end: #{fluid(80px, 240px)};
@@ -122,8 +122,8 @@
     border-radius: 0.25rem;
 
     > svg {
-        width: 2rem;
-        height: 2rem;
+        inline-size: 2rem;
+        block-size: 2rem;
     }
 
     @media (--motion-ok) {
@@ -151,7 +151,7 @@
     align-self: flex-start;
     overflow-x: auto;
     gap: 4rem;
-    overscroll-behavior-x: contain;
+    overscroll-behavior-inline: contain;
     counter-reset: tabs;
     scrollbar-width: none;
 
@@ -171,7 +171,7 @@
         // --_clr: hsl(0deg 100% 54%);
         --_clr: currentcolor;
 
-        border-bottom-color: currentcolor;
+        border-block-end-color: currentcolor;
     }
 
     > button {

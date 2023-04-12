@@ -5,7 +5,7 @@ import styles from './Carousel.module.scss'
 
 type Props = {
   children: JSX.Element[]
-  indicators?: string[]
+  indicators?: boolean
   buttons?: boolean
   title?: string
 } & HTMLAttributes<HTMLDivElement>
@@ -161,20 +161,21 @@ export function Carousel({ children, indicators, buttons, title, ...attributes }
 
       {indicators && (
         <nav className={clsx(styles.pagination)} ref={indicatorsRef} role="tablist">
-          {indicators.map((indicator, index) => (
+          {children.map((indicator, index) => (
             <button
               className={clsx(styles.control)}
               type="button"
               role="tab"
-              title={`Item ${index + 1}: ${indicator}`}
-              aria-setsize={indicators.length}
+              title={`Item ${index + 1}: ${indicator.props.slide.title}`}
+              aria-label={`${indicator.props.slide.title}`}
+              aria-setsize={children.length}
               aria-posinset={index + 1}
               aria-selected={active === index}
               tabIndex={active === index ? 0 : -1}
-              key={`${indicator} ${index}`}
+              key={`dot- ${index}`}
               onClick={() => ref.current && scrollToIndex(ref.current, index)}
             >
-              {indicator}
+              {indicator.props.slide.title}
             </button>
           ))}
         </nav>

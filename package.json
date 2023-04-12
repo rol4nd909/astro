@@ -35,6 +35,7 @@
     "stylelint-config-idiomatic-css": "^1.1.0",
     "stylelint-config-prettier": "^9.0.5",
     "stylelint-config-recommended-scss": "^9.0.1",
-    "stylelint-config-standard": "^30.0.1"
+    "stylelint-config-standard": "^30.0.1",
+    "stylelint-plugin-logical-css": "^0.9.1"
   }
 }

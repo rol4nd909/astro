@@ -12,7 +12,7 @@
 }
 
 body {
-    --_main: calc(50vw - (var(--size-contain) + var(--side-space)));
+    --_main: calc(50vi - (var(--size-contain) + var(--side-space)));
 
     display: grid;
     grid-template-columns:
@@ -27,7 +27,7 @@ body {
     font-weight: var(--fw-300);
     place-items: center;
     gap: var(--size-5);
-    min-block-size: 100vh;
+    min-block-size: 100vb;
     line-height: 1.5;
 
     @media (--for-phone-only) {

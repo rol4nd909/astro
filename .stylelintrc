@@ -1,4 +1,5 @@
 {
+  "plugins": ["stylelint-plugin-logical-css"],
   "extends": [
     "stylelint-config-standard",
     "stylelint-config-recommended-scss",
@@ -12,6 +13,20 @@
     "no-descending-specificity": null,
     "scss/no-global-function-names": null,
     "scss/comment-no-empty": null,
-    "custom-property-pattern": null
+    "custom-property-pattern": null,
+
+    "plugin/use-logical-properties-and-values": [
+      true,
+      {
+        "severity": "warning",
+        "ignore": ["overflow-y", "overflow-x"]
+      }
+    ],
+    "plugin/use-logical-units": [
+      true,
+      {
+        "severity": "warning"
+      }
+    ]
   }
 }
