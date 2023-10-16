@@ -4,7 +4,7 @@
 @use 'sass:meta';
 @use 'sass:list';
 
-$layers: 'props', 'base' !default;
+$layers: 'props', 'reset', 'base' !default;
 
 // Outputs the list of layers
 @layer #{$layers};
@@ -19,13 +19,5 @@ $layers: 'props', 'base' !default;
 @layer demo {
     h1 {
         color: hsl(var(--pink-7-hsl));
-    }
-
-    pre {
-        overflow-x: auto;
-        padding: var(--size-3);
-        background: var(--surface-2);
-        max-inline-size: 80vi;
-        border-radius: var(--radius-3);
     }
 }
