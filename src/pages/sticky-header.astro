@@ -4,128 +4,86 @@ import MainSiteLayout from '../layouts/MainSiteLayout.astro'
 
 <MainSiteLayout>
     <div class="flow" style="max-inline-size: 70ch; padding-block: 1.5rem; margin-inline: auto;">
-        <h1>The problem with sticky menus and what to do instead</h1>
+        <h1>The Problem with Sticky Menus and Better Alternatives</h1>
         <p>
-            Designers use sticky menus (menus that stick to the edge of the viewport) to make them
-            easy to access on long pages. But this fancy pattern hurts UX far more than it improves
-            it.
-        </p>
-        <p>Here's why:</p>
-
-        <h3>Problem #1: They constantly take up space</h3>
-        <p>
-            They get in the way of the actual content. And it's worse on small screens where space
-            is more limited.
+            Designers often use sticky menus (menus that stay visible at the edge of the screen) to
+            make navigation easy on long pages. However, this approach can harm user experience more
+            than it helps.
         </p>
 
-        <h3>Problem #2: They obscure content</h3>
-        <p>
-            For example, Material Design's floating action button always gets in the way of the
-            content behind it.
-        </p>
-
-        <h3>Problem #3: They break when you zoom in</h3>
-        <p>
-            When zooming in, the size of the sticky menu can increase to a point where there's
-            little space for the content.
-        </p>
-        <p>
-            On mobile, sticky menus may disappear upwards. They may also become <a
-                href="misaligned or slightly cropped">misaligned or slightly cropped</a
-            >.
-        </p>
-
-        <h3>Problem #4: They're difficult to access</h3>
-        <p>
-            If a sticky menu is taller than the content and viewport, users will be unable to access
-            the bottom of the menu (in some browsers).
-        </p>
-        <p>
-            Even if the content is taller than the menu, users still have to scroll to the bottom of
-            the content to see the menu which is long winded.
-        </p>
-        <p>
-            You could add an inner scroll bar to the menu. But <a
-                href="https://baymard.com/blog/inline-scroll-areas"
-                >multiple scroll bars are hard to use</a
-            >.
-        </p>
-
-        <h3>Problem #5: Internal page anchors feel broken when clicked twice</h3>
-        <p>Some sticky menus contain links that take users to content down the page.</p>
-        <p>
-            When the user clicks the same link for a second time nothing happens, which makes the
-            interface feel broken.
-        </p>
-
-        <h3>Problem #6: They appear closer than they are</h3>
-        <p>
-            Sticky menus are always visually accessible, but in reality are far away for keyboard
-            users navigating with the tab key.
-        </p>
-
-        <h3>Problem #7: They obscure links and other focusable elements</h3>
-        <p>
-            Users who navigate back up the page by keyboard may end up focusing on a link that's
-            obscured by the sticky menu.
-        </p>
-
-        <h2>The problem with sticky menus that appear on scroll and what to do instead</h2>
-        <p><strong>This seems smart because:</strong></p>
-
-        <ul>
-            <li>the menu gets out of the way to allow users to focus on the content</li>
-            <li>it allows users to access the menu without having to scroll back to the top</li>
-        </ul>
-
-        <p><strong>But this approach is worse than regular sticky menus.</strong></p>
-        <p>Here's why:</p>
-
-        <h3>Problem #1: They're distracting</h3>
-        <p>
-            This is because as the user scrolls the content to fit in the viewport, the menu will
-            suddenly appear.
-        </p>
-        <p>Good design doesn't guess (wrongly) about what users need.</p>
-
-        <h3>Problem #2: They're hard to control</h3>
-        <p>This is because scrolling up too much reveals the menu when it's not wanted.</p>
-        <p>And scrolling down a bit by accident will hide it when it is wanted.</p>
-        <p>Good design doesn't take control away.</p>
-
-        <h3>Problem #3: They cause dizziness and nausea</h3>
-        <p>
-            This is because <a
-                href="https://alistapart.com/article/designing-safer-web-animation-for-motion-sensitivity/"
-                >animation can cause dizziness, nausea, headaches and more</a
-            >.
-        </p>
-        <p>Good design avoids physical stress.</p>
-
-        <h3>Problem #4: They can impact performance</h3>
-        <p>
-            This is because JavaScript is needed to react to the scroll event which can drain the
-            battery and degrade performance especially on low-powered devices.
-        </p>
-        <p>Good design is lightweight.</p>
-
-        <h4>What to do instead</h4>
+        <h2>Issues with Sticky Menus:</h2>
         <ol>
             <li>
-                Keep pages short: Sticky menus are a symptom of long pages so fix the root cause.
+                <strong>Constantly Taking Up Space:</strong>
+                <p>
+                    Sticky menus cover the actual content, especially problematic on small screens.
+                </p>
             </li>
             <li>
-                Just let users scroll: It's a myth that scrolling is a problem. Even on mobile, the
-                top of the page is a flick or 2 away mostly.
+                <strong>Obscuring Content:</strong>
+                <p>Elements like floating action buttons can hide important content.</p>
             </li>
             <li>
-                Put relevant links in context: For example, add a subscribe form to the end of a
-                post or add a CTA to a pricing section.
+                <strong>Zooming Challenges:</strong>
+                <p>Zooming in can enlarge the menu, crowding the space for content.</p>
             </li>
             <li>
-                Use a back-to-top link: They're relatively unobtrusive (but only do this once you
-                exhaust the other options).
+                <strong>Accessibility Concerns:</strong>
+                <p>They can be hard to access, especially if taller than the viewport.</p>
+            </li>
+            <li>
+                <strong>Navigation Quirks:</strong>
+                <p>Clicking on links to scroll within the page can cause confusion.</p>
+            </li>
+            <li>
+                <strong>Misleading Visibility:</strong>
+                <p>
+                    Sticky menus may seem easily accessible but can be distant for keyboard users.
+                </p>
+            </li>
+            <li>
+                <strong>Blocking Links and Focus:</strong>
+                <p>They can cover links and cause focus issues during keyboard navigation.</p>
             </li>
         </ol>
+
+        <h2>Issues with Sticky Menus on Scroll:</h2>
+        <ol>
+            <li>
+                <strong>Distracting Behavior:</strong>
+                <p>The menu appearing as the user scrolls can be distracting.</p>
+            </li>
+            <li>
+                <strong>Lack of Control:</strong>
+                <p>Controlling when the menu appears or disappears can be challenging.</p>
+            </li>
+            <li>
+                <strong>Health and Performance Concerns:</strong>
+                <p>
+                    Animations can cause discomfort and impact performance, especially on
+                    low-powered devices.
+                </p>
+            </li>
+        </ol>
+
+        <h2>Better Practices:</h2>
+        <ul>
+            <li>
+                <strong>Keep Pages Short:</strong>
+                <p>Address long pages to eliminate the need for sticky menus.</p>
+            </li>
+            <li>
+                <strong>Allow Smooth Scrolling:</strong>
+                <p>Scrolling is not a problem, even on mobile devices.</p>
+            </li>
+            <li>
+                <strong>Place Links Contextually:</strong>
+                <p>Incorporate relevant links within the content.</p>
+            </li>
+            <li>
+                <strong>Use Back-to-Top Links Sparingly:</strong>
+                <p>Employ back-to-top links as a last resort.</p>
+            </li>
+        </ul>
     </div>
 </MainSiteLayout>
