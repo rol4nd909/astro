@@ -22,7 +22,7 @@ const { title = 'Home Page' } = Astro.props as Props
     </head>
     <body>
         <header>
-            Header
+            <a href="/">rolandfranke</a>
 
             <DarkLightToggle />
         </header>
@@ -31,6 +31,8 @@ const { title = 'Home Page' } = Astro.props as Props
             <slot />
         </main>
 
-        <footer>Footer</footer>
+        <footer>
+            <p>&copy; 2023 rolandfranke.nl</p>
+        </footer>
     </body>
 </html>

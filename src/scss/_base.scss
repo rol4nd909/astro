@@ -1,52 +1,112 @@
+@use './functions/functions.fluid' as *;
+
 @forward './base/fonts';
 @forward './base/reset';
 @forward './base/typography';
 
-:where(html) {
-    --size-contain: calc(88.125rem / 2);
-    --side-space: 0rem;
+:where(body, h1, h2, h3, h4, p, figure, blockquote, dl, dd) {
+    margin: 0;
+}
 
-    @media (--for-tablet-l-up) {
-        --side-space: 1.5rem;
+:where(h1, h2, h3, h4) {
+    line-height: 1.1;
+}
+
+h1 :where(html) {
+    // --size-contain: calc(88.125rem / 2);
+    // --side-space: 0rem;
+
+    // @media (--for-tablet-l-up) {
+    //     --side-space: 1.5rem;
+    // }
+    --site-space: #{fluid(16px, 32px)};
+
+    [color-scheme='light'] {
+        --text-1: var(--gray-9);
+        --text-2: var(--gray-7);
+    }
+
+    [color-scheme='dark'] {
+        --text-1: var(--gray-1);
+        --text-2: var(--gray-2);
     }
 }
 
 body {
-    --_main: calc(50vi - (var(--size-contain) + var(--side-space)));
+    // --_main: calc(50vi - (var(--size-contain) + var(--side-space)));
+    --_contain: 80rem;
 
     display: grid;
+    // grid-template-columns:
+    //     [fullbleed-start] calc(var(--side-space) * 2)
+    //     [main-start] minmax(1rem, var(--_main))
+    //     [contain-start] minmax(0, 1fr) [contain-end]
+    //     minmax(1rem, var(--_main)) [main-end];
     grid-template-columns:
-        [fullbleed-start] calc(var(--side-space) * 2)
-        [main-start] minmax(1rem, var(--_main))
-        [contain-start] minmax(0, 1fr) [contain-end]
-        minmax(1rem, var(--_main)) [main-end];
+        [fullbleed-start] minmax(var(--site-space, 1rem), 1fr)
+        [main-start] minmax(min(100% - (var(--site-space, 1rem) * 2), var(--_contain)), 1fr)
+        [main-end]
+        minmax(var(--site-space, 1rem), 1fr) [fullbleed-end];
+    grid-template-rows: auto 1fr auto;
     margin: 0;
     background-image: var(--gradient-3);
     font-family: Raleway, sans-serif;
     font-size: var(--fs-fluid-base);
     font-weight: var(--fw-300);
-    place-items: center;
-    gap: var(--size-5);
     min-block-size: 100vb;
     line-height: 1.5;
 
-    @media (--for-phone-only) {
-        background-color: hsl(var(--purple-5-hsl));
-        background-image: none;
-    }
+    // @media (--for-phone-only) {
+    //     background-color: hsl(var(--purple-5-hsl));
+    //     background-image: none;
+    // }
 }
 
 main {
     display: grid;
     grid-template-columns: inherit;
     grid-column: fullbleed;
+    align-content: flex-start;
 
     > * {
-        grid-column: contain;
+        grid-column: main;
     }
 }
 
 header,
 footer {
-    grid-column: contain;
+    grid-column: main;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: #{fluid(4px, 24px)};
+    border-block-end: 1px solid hsl(var(--pink-7-hsl));
+
+    > a {
+        color: var(--text-1);
+        font-size: var(--fs-fluid-h5);
+        font-weight: var(--fw-800);
+        text-decoration: none;
+    }
+}
+
+footer {
+    padding-block: #{fluid(4px, 8px)};
+    place-self: center;
+    font-size: var(--fs-0);
+}
+
+.flow > *:where(:not(:first-child)) {
+    margin-block-start: var(--flow-space, 1em);
+}
+
+a {
+    color: var(--text-1);
+
+    &:hover {
+        text-decoration: none;
+    }
 }

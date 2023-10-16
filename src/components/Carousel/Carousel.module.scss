@@ -2,7 +2,7 @@
 
 .root {
     --flow-spacer: 6rem;
-    --_carousel-item-size: calc(50vi - var(--size-contain));
+    --_carousel-item-size: calc(50vi - 40rem);
     --_carousel-gutters: max(1rem, calc(var(--_carousel-item-size) - var(--side-space)));
     --_carousel-scrollbar-gutter: 4rem;
     --ease-2: cubic-bezier(0.25, 0, 0.4, 1);
@@ -53,7 +53,7 @@
     display: grid;
     grid-auto-columns: 100%;
     grid-auto-flow: column;
-    grid-column: 1 / -1;
+    // grid-column: 1 / -1;
     grid-row: carousel-scroller;
     overflow-x: auto;
     gap: 1rem;
