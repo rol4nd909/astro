@@ -35,7 +35,7 @@ module.exports = {
     postcssCustomMedia(),
     postcssjitprops({
       ...OpenProps,
-      custom_selector: ':where(html)',
+      // custom_selector: ':where(html)',
       layer: 'props.openprops'
     }),
     require('autoprefixer'),
