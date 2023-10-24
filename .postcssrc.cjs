@@ -1,9 +1,8 @@
 const postcssPresetEnv  = require('postcss-preset-env')
-const OpenProps = require("open-props");
 const postcssjitprops = require("postcss-jit-props");
+const OpenProps = require("open-props");
 const postcssCustomMedia = require('postcss-custom-media');
 const postcssGlobalData = require('@csstools/postcss-global-data');
-
 
 module.exports = {
   plugins: [
@@ -32,12 +31,8 @@ module.exports = {
         'src/scss/props/_props.media.scss'
       ]
     }),
+    postcssjitprops({...OpenProps}),
     postcssCustomMedia(),
-    postcssjitprops({
-      ...OpenProps,
-      // custom_selector: ':where(html)',
-      layer: 'props.openprops'
-    }),
     require('autoprefixer'),
   ]
 };
