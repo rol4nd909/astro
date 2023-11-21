@@ -1,11 +1,12 @@
 const postcssPresetEnv  = require('postcss-preset-env')
-const postcssjitprops = require("postcss-jit-props");
 const OpenProps = require("open-props");
+const postcssjitprops = require("postcss-jit-props");
 const postcssCustomMedia = require('postcss-custom-media');
 const postcssGlobalData = require('@csstools/postcss-global-data');
 
 module.exports = {
   plugins: [
+    postcssjitprops(OpenProps),
     postcssPresetEnv({
       autoprefixer: false,
       stage: 2,
@@ -26,12 +27,16 @@ module.exports = {
         'custom-media-queries': true
       }
     }),
+    postcssjitprops({
+      ...OpenProps,
+      // custom_selector: ':where(html)',
+      layer: 'props.openprops'
+    }),
     postcssGlobalData({
       files: [
         'src/scss/props/_props.media.scss'
       ]
     }),
-    postcssjitprops({...OpenProps}),
     postcssCustomMedia(),
     require('autoprefixer'),
   ]
