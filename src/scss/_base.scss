@@ -43,6 +43,7 @@ main {
     grid-template-columns: inherit;
     grid-column: fullbleed;
     align-content: flex-start;
+    row-gap: 3rem;
 
     > * {
         grid-column: main;

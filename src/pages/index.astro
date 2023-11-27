@@ -1,7 +1,16 @@
 ---
 import MainSiteLayout from '../layouts/MainSiteLayout.astro'
+import AnimatedCard from '../components/AnimatedCard.astro'
 ---
 
 <MainSiteLayout>
-    <h1 style="place-self: center;">Roland's Playground</h1>
+    <h1 style="place-self: center; margin-block-start: 3rem;">Roland's Playground</h1>
+
+    <AnimatedCard />
 </MainSiteLayout>
+
+<style>
+    body {
+        background-image: none;
+    }
+</style>
