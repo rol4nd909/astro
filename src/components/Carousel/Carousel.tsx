@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import { HTMLAttributes, useRef, useState, KeyboardEvent } from 'react'
+import { type HTMLAttributes, useRef, useState, type KeyboardEvent } from 'react'
 import { useScroll } from '../../../hooks/useScroll'
 import styles from './Carousel.module.scss'
 

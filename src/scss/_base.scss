@@ -36,6 +36,10 @@ body {
     font-weight: var(--fw-300);
     min-block-size: 100vb;
     line-height: 1.5;
+
+    @media (--for-tablet-l-up) {
+        background-image: var(--gradient-1);
+    }
 }
 
 main {
