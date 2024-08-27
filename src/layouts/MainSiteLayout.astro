@@ -8,6 +8,8 @@ export interface Props {
 }
 
 const { title = 'Home Page' } = Astro.props as Props
+
+const year = new Date().getFullYear()
 ---
 
 <html lang="en">
@@ -32,7 +34,11 @@ const { title = 'Home Page' } = Astro.props as Props
         </main>
 
         <footer>
-            <p>&copy; 2023 rolandfranke.nl</p>
+            <p>&copy; <span id="footer-year">{year}</span> rolandfranke.nl</p>
         </footer>
     </body>
 </html>
+
+<script is:inline>
+    document.getElementById('footer-year').innerText = new Date().getFullYear()
+</script>
