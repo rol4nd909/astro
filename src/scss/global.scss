@@ -16,8 +16,8 @@ $layers: 'props', 'reset', 'base' !default;
     }
 }
 
-@layer demo {
-    h1 {
-        color: hsl(var(--pink-7-hsl));
-    }
-}
+// @layer demo {
+//     h1 {
+//         color: hsl(var(--pink-7-hsl));
+//     }
+// }

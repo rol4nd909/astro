@@ -36,3 +36,12 @@ p {
     font-style: italic;
     font-weight: var(--fw-800);
 }
+
+:where(code, pre) {
+    background-color: color-mix(in hsl, var(--gray-7), transparent 60%);
+    font-family: var(--font-monospace-code);
+    padding-block: 0.25rem;
+    padding-inline: 0.5rem;
+    font-weight: 500;
+    border-radius: 0.25rem;
+}

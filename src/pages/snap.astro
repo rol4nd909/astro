@@ -1,0 +1,66 @@
+---
+import MainSiteLayout from '../layouts/MainSiteLayout.astro'
+---
+
+<MainSiteLayout>
+    <div class="flow" style="max-inline-size: 70ch; padding-block: 1.5rem; margin-inline: auto;">
+        <h1>Scroll snap api suggestion</h1>
+
+        <h2>Describing the State</h2>
+        <p>
+            This state could be described as a "transitory snap" or "flyover snap." It's a state
+            where elements are momentarily in the snap zone but aren't selected as the final snap
+            target. The key focus is on recognizing that these elements have passed through a
+            significant area that could be important for visual feedback or interaction.
+        </p>
+
+        <h2>Naming the Event</h2>
+        <p>Given the behavior and the intent, here are some potential names and their reasoning:</p>
+        <ol>
+            <li>
+                <code>snapflyover</code>: This directly conveys the idea that the element "flies
+                over" the snap zone without being snapped to. It's descriptive and implies a
+                transient interaction.
+            </li>
+            <li>
+                <code>snaptransit</code>: Suggests that the element is in transit across the snap
+                area, signaling that it's just passing by rather than stopping.
+            </li>
+            <li>
+                <code>snapcross</code>: Indicates that the element has crossed into or through the
+                snap area but didn't settle there.
+            </li>
+            <li>
+                <code>snaphover</code>: Evokes the idea of the element hovering or passing over the
+                snap area momentarily. However, this could be confusing with traditional "hover"
+                events in CSS, which are related to pointer events.
+            </li>
+            <li>
+                <code>snapintersect</code>: Suggests that the element has intersected the snap area,
+                emphasizing the geometric or positional relationship rather than the action of
+                snapping.
+            </li>
+        </ol>
+
+        <h3>Is This Still a Snap Event?</h3>
+        <p>
+            Yes, it's still related to snapping, but it's more of an interim or auxiliary snap
+            event. It adds a finer level of control and feedback in the snapping process, especially
+            for cases where visual or interactive feedback is needed as elements scroll through the
+            snap zone.
+        </p>
+
+        <h3>Final Thoughts</h3>
+        <p>
+            Out of the options, <code>snapflyover</code> seems to be the most intuitive and descriptive
+            for what you're trying to achieve. It clearly conveys the idea that the element is moving
+            over the snap area without stopping there, which matches your use case well.
+        </p>
+
+        <p>
+            If you wanted to focus more on the idea of the event being triggered as the element
+            intersects the snap area, then <code>snapintersect</code> could be a good alternative. It's
+            a bit more technical but might resonate well with developers.
+        </p>
+    </div>
+</MainSiteLayout>
